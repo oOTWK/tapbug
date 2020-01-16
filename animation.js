@@ -74,7 +74,7 @@ function createBug() {
 }
 
 
-// kill bug within 30px
+// remove bug if it is tapped
 function tapBug(event) {
 	if (isPaused)
 		return;
@@ -85,7 +85,7 @@ function tapBug(event) {
 	for (var i = 0; i < bugs.length; i++) {
 		if ((bugs[i].getExist()) &&
 			Math.sqrt(Math.pow(bugs[i].getX() - x, 2) + Math.pow(bugs[i].getY() - y, 2))
-			< 30 + bugSizeR) {
+			< 1 + bugSizeR) {
 			bugs[i].killBug();
 			if (level == 1) {
 				score1 += bugs[i].getScore();
